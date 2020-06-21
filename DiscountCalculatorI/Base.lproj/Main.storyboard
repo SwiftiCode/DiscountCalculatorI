@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,86 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DiscountCalculatorI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sug-GP-NRC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-ox-DG7">
+                                        <rect key="frame" x="20" y="30" width="366" height="549.33333333333337"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the Amount Before Discount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nqR-c4-8e7">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="27.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="$0.0" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-xT-TxO">
+                                                <rect key="frame" x="0.0" y="67.666666666666671" width="366" height="69.000000000000014"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uk2-JL-jN9">
+                                                <rect key="frame" x="0.0" y="176.66666666666663" width="366" height="216"/>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="0.02688891262" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount = $0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-u4-ruT">
+                                                <rect key="frame" x="0.0" y="432.66666666666669" width="366" height="38.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After Discount = $0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFn-hg-i6x">
+                                                <rect key="frame" x="0.0" y="510.99999999999994" width="366" height="38.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="b7A-Th-Bav" appends="YES" id="8W5-OH-2bs"/>
+                                        </connections>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SUp-ox-DG7" secondAttribute="trailing" constant="20" id="GGi-pY-RjB"/>
+                                    <constraint firstAttribute="bottom" secondItem="SUp-ox-DG7" secondAttribute="bottom" constant="156.66666666666663" id="Hon-W9-oNm"/>
+                                    <constraint firstItem="SUp-ox-DG7" firstAttribute="width" secondItem="sug-GP-NRC" secondAttribute="width" multiplier="0.884058" id="LpI-Gy-Gaw"/>
+                                    <constraint firstItem="SUp-ox-DG7" firstAttribute="leading" secondItem="sug-GP-NRC" secondAttribute="leading" constant="20" id="Ne1-KC-emv"/>
+                                    <constraint firstItem="SUp-ox-DG7" firstAttribute="top" secondItem="sug-GP-NRC" secondAttribute="top" constant="30" id="nP8-Jf-bNU"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qot-Uh-ROG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="tZc-Ya-9pi"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sug-GP-NRC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HoE-Hk-3sg"/>
+                            <constraint firstItem="sug-GP-NRC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kii-Z6-d1s"/>
+                            <constraint firstItem="sug-GP-NRC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cJ6-t4-B9L"/>
+                            <constraint firstItem="sug-GP-NRC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dtM-bj-P1a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="discountAmountLabel" destination="0wx-u4-ruT" id="zw7-2I-Asi"/>
+                        <outlet property="discountPickerView" destination="uk2-JL-jN9" id="hQM-yS-sTK"/>
+                        <outlet property="discountTextField" destination="bgD-xT-TxO" id="Qgv-8B-Hce"/>
+                        <outlet property="discountTotalLabel" destination="UFn-hg-i6x" id="cIT-w5-20c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="b7A-Th-Bav">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="BYZ-38-t0r" id="mOq-0T-odP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="476.81159420289856" y="123.91304347826087"/>
         </scene>
     </scenes>
 </document>
